@@ -10,7 +10,7 @@
               .col-lg-4.resort
                 %img.img-rounded{:src => "http://static.pexels.com/wp-content/uploads/2014/06/landscape-mountains-nature-1214.jpg", :style => "width: 200px; height: 200px;"}
                   %h2 Resort One
-                  %p SNOW FALL
+                  %p= Snotel.daily(:lookout).last[:change_in_snow_depth_in]
                   %p TRAVEL TIME
                   %p
                     %a.btn.btn-default{:href => "#", :role => "button"} Details & Map
