@@ -5,6 +5,20 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    %script{:src => "https://maps.googleapis.com/maps/api/js"}
+    :javascript
+      function initialize() {
+        var mapCanvas = document.getElementById('map_canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(39.640600, -106.373564),
+          zoom: 9,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
   %body
     = render partial: 'layouts/shared/navbar'
     = yield

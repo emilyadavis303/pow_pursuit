@@ -11,3 +11,5 @@
                 %h2= "Past 24 hours: #{Snotel.hourly(@resort.snotel_station.to_sym).last[:change_in_snow_depth_in]} in."
                 %h2= "Past 3 days: #{Snotel.hourly(@resort.snotel_station.to_sym, 72).last[:change_in_snow_depth_in]} in."
                 %h2= "Past 7 days: #{Snotel.daily(@resort.snotel_station.to_sym, 7).last[:change_in_snow_depth_in]} in."
+              .col-lg-6
+                #map_canvas

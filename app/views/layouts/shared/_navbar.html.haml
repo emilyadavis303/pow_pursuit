@@ -1,10 +1,9 @@
 .masthead.clearfix
   .inner
-    %h2.masthead-brand
-      = link_to "POW PURSUIT", root_path
+    %h2.masthead-brand POW PURSUIT
     %ul.nav.masthead-nav
       %li
-        %a{:href => "#"} What We Do
+        = link_to "Home", root_path
       %li
         %a{:href => "#"} Sign In
       %li
@@ -13,3 +12,5 @@
         %a{:href => "#"} Travel Times
       %li
         = link_to "Resorts", resorts_path
+      %li
+        %a{:href => "#"} What We Do
