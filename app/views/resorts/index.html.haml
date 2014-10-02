@@ -8,8 +8,9 @@
             .row
               - @resorts.each do |resort|
                 .col-lg-4.resorts
-                  %h2= resort.name
-                  %p= Snotel.daily(resort.snotel_station.to_sym).last[:change_in_snow_depth_in]
+                  %img.img-rounded.resort{:src => "square.jpg", :style => "width: 150px; height: 150px;"}
+                  %h1= resort.name
+                  %h3= "Snowfall: #{Snotel.daily(resort.snotel_station.to_sym).last[:change_in_snow_depth_in]} in."
                   %p TRAVEL TIME
                   %p
-                    %a.btn.btn-default{:href => "#", :role => "button"} Details & Map
+                    = link_to "Details & Map", resort_path(resort)
