@@ -2,7 +2,7 @@
   .inner
     %h3.masthead-brand POW PURSUIT
     %ul.nav.masthead-nav
-      %li.active
+      %li
         %a{:href => "#"} What We Do
       %li
         %a{:href => "#"} Sign In
@@ -11,4 +11,4 @@
       %li
         %a{:href => "#"} Travel Times
       %li
-        %a{:href => "#"} Resorts
+        = link_to "Resorts", resorts_path
