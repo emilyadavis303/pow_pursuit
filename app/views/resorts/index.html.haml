@@ -10,7 +10,7 @@
                 .col-lg-4.resorts
                   %img.img-rounded.resort{:src => "square.jpg", :style => "width: 150px; height: 150px;"}
                   %h1= resort.name
-                  %h3= "Snowfall: #{Snotel.daily(resort.snotel_station.to_sym).last[:change_in_snow_depth_in]} in."
+                  %h3= "Snowfall: #{resort.determine_daily_snowfall || 0} in."
                   %p TRAVEL TIME
                   %p
                     = link_to "Details & Map", resort_path(resort)

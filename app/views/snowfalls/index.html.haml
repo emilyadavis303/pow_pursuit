@@ -1,0 +1,11 @@
+%body.all-resorts
+  .resorts-site-wrapper
+    .site-wrapper-inner
+      .cover-container
+        .inner.cover
+          %h1.cover-heading Snowfalls by Resort
+          .container-fluid
+            .row
+              - @resorts.sort do |resort|
+                .col-lg-4.resorts
+                  %h3= resort.determine_daily_snowfall

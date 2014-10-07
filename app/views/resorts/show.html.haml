@@ -7,9 +7,10 @@
           .container-fluid
             .row
               .col-lg-6.resort-details
-                %h1.cover-heading= "Snowfall:"
-                %h2= "Past 24 hours: #{Snotel.hourly(@resort.snotel_station.to_sym).last[:change_in_snow_depth_in]} in."
-                %h2= "Past 3 days: #{Snotel.hourly(@resort.snotel_station.to_sym, 72).last[:change_in_snow_depth_in]} in."
-                %h2= "Past 7 days: #{Snotel.daily(@resort.snotel_station.to_sym, 7).last[:change_in_snow_depth_in]} in."
+                %h1.cover-heading Snowfall:
+                %h2= "Past 24 hours: #{@snowfall_24 || 0} in."
+                %h2= "Past 3 days: #{@snowfall_3 || 0} in."
+                %h2= "Past 7 days: #{@snowfall_7 || 0} in."
+                %h2 Travel Time:
               .col-lg-6
                 #map_canvas
