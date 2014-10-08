@@ -76,9 +76,6 @@
 .inner {
   padding: 15px;
 }
-.cover-heading{
-  margin-top: 1px;
-}
 .lead {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -87,14 +84,21 @@
   margin-top: 10px;
 }
 .marketing{
+  height: 600px;
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+#map {
+  width: auto;
+  height: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /*
  * Resorts Index
  */
-.all-resorts{
+.all-resorts {
   background: url(IMG_0466.jpg) no-repeat center center fixed;
   background-size: 100%;
 }
@@ -132,9 +136,4 @@
   margin: 100px 45px 100px 45px;
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-#map {
-  width: auto;
-  height: 400px;
-  margin-bottom: 20px;
 }
