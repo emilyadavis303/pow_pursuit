@@ -3,10 +3,15 @@ class ResortsController < ApplicationController
 
   def index
     @resorts  = Resort.all
+
+    @resorts.each do |resort|
+      Resque.enqueue(ResortDailySnowfall)
+    end
   end
 
   def show
-    @snowfall_24 = @resort.determine_daily_snowfall
+
+    # @snowfall_24 = @resort.determine_daily_snowfall
     @snowfall_3  = @resort.determine_three_day_snowfall
     @snowfall_7  = @resort.determine_seven_day_snowfall
   end
