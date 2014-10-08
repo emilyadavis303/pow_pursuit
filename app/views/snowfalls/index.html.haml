@@ -6,6 +6,7 @@
           %h1.cover-heading Snowfalls by Resort
           .container-fluid
             .row
-              - @resorts.sort do |resort|
+              - @daily_snowfalls_hash.each_pair do |resort, snowfall|
                 .col-lg-4.resorts
-                  %h3= resort.determine_daily_snowfall
+                  %h3= resort
+                  %h4= snowfall
