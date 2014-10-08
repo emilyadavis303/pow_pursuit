@@ -13,18 +13,20 @@
                   %h4= "Snowfall: #{snowfall}"
                   %p
                     %a.btn.btn-default{:href => "#", :role => "button"} Details & Map
-            #map_canvas
-              %script{:src => "https://maps.googleapis.com/maps/api/js"}
+            #map
+              %script{:src => "http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=Fmjtd%7Cluurnu6ynl%2Cbx%3Do5-9wrnu0"}
               :javascript
-                function initialize() {
-                  var mapCanvas = document.getElementById('map_canvas');
-                  var mapOptions = {
-                    center: new google.maps.LatLng(39.640600, -106.373564),
-                    zoom: 9,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                  }
-                  var map = new google.maps.Map(mapCanvas, mapOptions);
-                  var trafficLayer = new google.maps.TrafficLayer();
-                  trafficLayer.setMap(map);
-                }
-                google.maps.event.addDomListener(window, 'load', initialize);
+                MQA.EventUtil.observe(window, 'load', function() {
+
+                var options = {
+                  elt: document.getElementById('map'),           // ID of map element on page
+                  zoom: 10,                                      // initial zoom level of the map
+                  latLng: { lat: 39.639674, lng: -106.373735 },  // center of map in latitude/longitude
+                  mtype: 'map',                                  // map type (map, sat, hyb); defaults to map
+                  bestFitMargin: 0,                              // margin offset from map viewport when applying a bestfit on shapes
+                  zoomOnDoubleClick: true                        // enable map to be zoomed in when double-clicking on map
+                };
+
+                // construct an instance of MQA.TileMap with the options object
+                window.map = new MQA.TileMap(options);
+                });
