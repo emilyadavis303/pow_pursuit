@@ -6,11 +6,11 @@
           %h1.cover-heading= @resort.name
           .container-fluid
             .row
-              .col-lg-6.resort-details
+              .col-lg-2.resort-details
                 %h1.cover-heading Snowfall:
                 %h2= "Past 24 hours: #{@snowfall_24 || 0} in."
                 %h2= "Past 3 days: #{@snowfall_3 || 0} in."
                 %h2= "Past 7 days: #{@snowfall_7 || 0} in."
                 %h2 Travel Time:
-              .col-lg-6
+              .col-lg-8
                 #map_canvas
