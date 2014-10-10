@@ -1,12 +1,22 @@
 .masthead.clearfix
   .inner
     %h2.masthead-brand POW PURSUIT
-    %ul.nav.masthead-nav
-      %li
-        = link_to "Home", root_path
-      %li
-        = link_to "Snowfalls", snowfalls_path
-      %li
-        = link_to "Resorts", resorts_path
-      %li
-        %a{:href => "#"} Your Pursuit
+    .container
+      %ul.nav.masthead-nav
+        %li
+          = link_to "Home", root_path
+        %li
+          = link_to "Snowfalls", snowfalls_path
+        %li
+          = link_to "Resorts", resorts_path
+        %li.dropdown
+          %a.dropwdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Your Pursuit
+            %span.caret
+          %ul.dropdown-menu{:role => "menu"}
+            - if current_user
+              %li
+                = link_to "Your Profile", user_path(current_user)
+            - else
+              %li
+                = link_to "Sign In With Twitter", "/auth/twitter"
