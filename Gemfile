@@ -16,6 +16,7 @@ gem 'haml-rails'
 gem 'snotel'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'figaro'
 
 group :development, :test do
   gem 'spring'
