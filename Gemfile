@@ -17,6 +17,7 @@ gem 'snotel'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'figaro'
+gem 'whenever',       require: false
 
 group :development, :test do
   gem 'spring'
