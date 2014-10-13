@@ -7,10 +7,10 @@
           %p.lead Today's top three snowfalls:
           .container.marketing
             .row
-              - @top_three.each do |resort, snowfall|
+              - @top_three.each do |resort|
                 .col-lg-4.resort
-                  %h2= resort
-                  %h4= "Snowfall: #{snowfall}"
+                  %h2= resort.name
+                  %h4= "Snowfall: #{resort.daily_snowfall}"
                   %p
                     %a.btn.btn-default{:href => "#", :role => "button"} Details & Map
               #map

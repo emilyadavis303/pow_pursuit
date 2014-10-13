@@ -11,13 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001200535) do
+ActiveRecord::Schema.define(version: 20141011233317) do
 
   create_table "resorts", force: true do |t|
     t.string   "name"
     t.string   "snotel_station"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "daily_snowfall",     default: 0, null: false
+    t.integer  "three_day_snowfall", default: 0, null: false
+    t.integer  "seven_day_snowfall", default: 0, null: false
+  end
+
+  create_table "users", force: true do |t|
+    t.string "name"
+    t.string "email"
+    t.string "city"
+    t.string "provider"
+    t.string "uid"
+    t.string "fave_one"
+    t.string "fave_two"
+    t.string "fave_three"
   end
 
 end

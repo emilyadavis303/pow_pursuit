@@ -6,7 +6,10 @@
           %h1.cover-heading Snowfalls by Resort
           .container-fluid
             .row
-              - @daily_snowfalls_hash.each_pair do |resort, snowfall|
+              - @resorts.each do |resort|
                 .col-lg-4.resorts
-                  %h3= resort
-                  %h4= snowfall
+                  %img.img-rounded.resort{:src => "square.jpg", :style => "width: 150px; height: 150px;"}
+                  %h1= resort.name
+                  %h3= "Snowfall: #{resort.daily_snowfall} in."
+                  %p
+                    = link_to "Details & Map", resort_path(resort), class: 'btn btn-default'
