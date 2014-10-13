@@ -34,15 +34,4 @@ ActiveRecord::Schema.define(version: 20141011233317) do
     t.string "fave_three"
   end
 
-  create_table "users", force: true do |t|
-    t.string "name"
-    t.string "email"
-    t.string "city"
-    t.string "provider"
-    t.string "uid"
-    t.string "fave_one"
-    t.string "fave_two"
-    t.string "fave_three"
-  end
-
 end
