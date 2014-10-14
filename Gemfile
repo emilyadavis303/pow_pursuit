@@ -18,6 +18,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'whenever',       require: false
+gem 'twitter'
 
 group :development, :test do
   gem 'spring'
