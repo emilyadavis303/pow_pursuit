@@ -1,1 +1,14 @@
-%h2= @user.name
+%body.welcome
+  .resorts-site-wrapper
+    .site-wrapper-inner
+      .cover-container
+        .inner.cover
+          %h1.cover-heading Your Pursuit
+          .container-fluid
+            .row
+              - @favorites.each do |favorite|
+                .col-lg-4.resorts
+                  %img.img-rounded.resort{:src => "square.jpg", :style => "width: 150px; height: 150px;"}
+                  %h1= favorite.name
+                  %h3= "Snowfall: #{favorite.daily_snowfall} in."
+                  = link_to "Details & Map", resort_path(favorite), class: 'btn btn-default'

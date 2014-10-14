@@ -1,0 +1,38 @@
+%body.welcome
+  .container
+    .row.col-lg-6.col-lg-offset-3
+      %h2 Help Us Help Your Pursuit.
+      = form_for(@user, :html => { :class => "form-horizontal"}) do |f|
+        - if @user.errors.any?
+          %ul#errors
+            - @user.errors.full_messages.each do |error|
+              %li= error
+        .form-group
+          = f.label :name, :class => "col-sm-2 control-label"
+          .col-sm-10
+            = f.text_field :name, class: "form-control"
+        .form-group
+          = f.label :email, :class => "col-sm-2 control-label"
+          .col-sm-10
+            = f.text_field :email, class: "form-control", placeholder: "Email Address"
+        .form-group
+          = f.label :city, :class => "col-sm-2 control-label"
+          .col-sm-10
+            = f.text_field :city, class: "form-control", placeholder: "City"
+        .form-group
+          = f.label :favorite, :class => "col-sm-2 control-label"
+          .col-sm-10
+            = select(:favorites, :resort_ids, options_from_collection_for_select(Resort.all, "id", "name"), {}, { multiple: true, size: 5 })
+            -# = f.collection_select(:fave_one, Resort.all, :id, :name, {class: "form-control"})
+        -# .form-group
+        -#   = f.label :favorite, :class => "col-sm-2 control-label"
+        -#   .col-sm-10
+        -#     = f.collection_select(:fave_two, Resort.all, :id, :name, {class: "form-control"})
+        -# .form-group
+        -#   = f.label :favorite, :class => "col-sm-2 control-label"
+        -#   .col-sm-10
+        -#     = f.collection_select(:fave_three, Resort.all, :id, :name, {class: "form-control"})
+          %br/
+          %br/
+        .form-group
+          = f.submit "Update My Account", class: "btn btn-large btn-default", href: "user_update_path"
