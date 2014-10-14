@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    @user     = current_user
-    @fave_one = @user.fave_one
+    @user      = current_user
+    @favorites = @user.resorts
   end
 
   def edit
@@ -11,6 +11,14 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      binding.pry
+      favorite_resorts = params[:favorites][:resort_ids]
+      favorite_resorts.delete_if { |r| r == "" }
+      
+      favorite_resorts.each do
+        |fr| @user.favorites.create(resort_id: fr.to_i)
+      end
+
       flash[:success] = "User profile updated!"
       redirect_to user_path(@user)
     else
@@ -27,7 +35,8 @@ class UsersController < ApplicationController
                                   :city,
                                   :fave_one,
                                   :fave_two,
-                                  :fave_three)
+                                  :fave_three,
+                                  favorites: :resort_ids)
   end
 
   def set_user

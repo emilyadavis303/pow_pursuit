@@ -22,15 +22,16 @@
         .form-group
           = f.label :favorite, :class => "col-sm-2 control-label"
           .col-sm-10
-            = f.collection_select(:fave_one, Resort.all, :id, :name, {class: "form-control"})
-        .form-group
-          = f.label :favorite, :class => "col-sm-2 control-label"
-          .col-sm-10
-            = f.collection_select(:fave_two, Resort.all, :id, :name, {class: "form-control"})
-        .form-group
-          = f.label :favorite, :class => "col-sm-2 control-label"
-          .col-sm-10
-            = f.collection_select(:fave_three, Resort.all, :id, :name, {class: "form-control"})
+            = select(:favorites, :resort_ids, options_from_collection_for_select(Resort.all, "id", "name"), {}, { multiple: true, size: 5 })
+            -# = f.collection_select(:fave_one, Resort.all, :id, :name, {class: "form-control"})
+        -# .form-group
+        -#   = f.label :favorite, :class => "col-sm-2 control-label"
+        -#   .col-sm-10
+        -#     = f.collection_select(:fave_two, Resort.all, :id, :name, {class: "form-control"})
+        -# .form-group
+        -#   = f.label :favorite, :class => "col-sm-2 control-label"
+        -#   .col-sm-10
+        -#     = f.collection_select(:fave_three, Resort.all, :id, :name, {class: "form-control"})
           %br/
           %br/
         .form-group

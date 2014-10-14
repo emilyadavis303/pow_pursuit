@@ -1,17 +1,14 @@
 %body.welcome
-  .site-wrapper
+  .resorts-site-wrapper
     .site-wrapper-inner
       .cover-container
         .inner.cover
           %h1.cover-heading Your Pursuit
-          .container.marketing
+          .container-fluid
             .row
-              - @top_three.each do |resort|
-                .col-lg-4.resort
-                  %h2= resort.name
-                  %h4= "Snowfall: #{resort.daily_snowfall}"
-                  %p
-                    %a.btn.btn-default{:href => "#", :role => "button"} Details & Map
-
-  %h4
-    = link_to "Help Us Help Your Pursuit", edit_user_path, class: 'btn btn-default'
+              - @favorites.each do |favorite|
+                .col-lg-4.resorts
+                  %img.img-rounded.resort{:src => "square.jpg", :style => "width: 150px; height: 150px;"}
+                  %h1= favorite.name
+                  %h3= "Snowfall: #{favorite.daily_snowfall} in."
+                  = link_to "Details & Map", resort_path(favorite), class: 'btn btn-default'
