@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014180338) do
+ActiveRecord::Schema.define(version: 20141015172349) do
 
   create_table "favorites", force: true do |t|
     t.integer  "user_id"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20141014180338) do
     t.integer  "daily_snowfall",     default: 0, null: false
     t.integer  "three_day_snowfall", default: 0, null: false
     t.integer  "seven_day_snowfall", default: 0, null: false
+    t.integer  "lat"
+    t.integer  "lng"
   end
 
   create_table "users", force: true do |t|

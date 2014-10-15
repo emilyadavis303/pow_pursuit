@@ -9,6 +9,8 @@ class ResortsController < ApplicationController
     @snowfall_24 = @resort.determine_daily_snowfall
     @snowfall_3  = @resort.determine_three_day_snowfall
     @snowfall_7  = @resort.determine_seven_day_snowfall
+    @resort_lat  = @resort.lat
+    @resort_lng  = @resort.lng
   end
 
   private
