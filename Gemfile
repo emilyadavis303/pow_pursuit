@@ -19,6 +19,7 @@ gem 'omniauth-twitter'
 gem 'figaro'
 gem 'whenever',       require: false
 gem 'twitter'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'spring'
