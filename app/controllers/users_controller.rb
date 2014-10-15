@@ -11,10 +11,9 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      binding.pry
       favorite_resorts = params[:favorites][:resort_ids]
       favorite_resorts.delete_if { |r| r == "" }
-      
+
       favorite_resorts.each do
         |fr| @user.favorites.create(resort_id: fr.to_i)
       end
@@ -25,6 +24,10 @@ class UsersController < ApplicationController
       flash[:error] = "Something went wrong! Please try again."
       render :edit
     end
+  end
+
+  def tweet
+
   end
 
   private

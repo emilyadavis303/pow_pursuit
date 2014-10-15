@@ -12,7 +12,8 @@
                   %h2= resort.name
                   %h4= "Snowfall: #{resort.daily_snowfall}"
                   %p
-                    %a.btn.btn-default{:href => "#", :role => "button"} Details & Map
+                    = link_to "Details & Map", resort_path(resort), class: 'btn btn-default'
+                  %br/
               #map
                 %script{:src => "http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=Fmjtd%7Cluurnu6ynl%2Cbx%3Do5-9wrnu0"}
                 :javascript
@@ -20,7 +21,7 @@
 
                   var options = {
                     elt: document.getElementById('map'),           // ID of map element on page
-                    zoom: 9,                                      // initial zoom level of the map
+                    zoom: 9,                                       // initial zoom level of the map
                     latLng: { lat: 39.644801, lng: -106.595289 },  // center of map in latitude/longitude
                     mtype: 'map',                                  // map type (map, sat, hyb); defaults to map
                     bestFitMargin: 0,                              // margin offset from map viewport when applying a bestfit on shapes

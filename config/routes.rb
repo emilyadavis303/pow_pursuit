@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :resorts,   only: [:index, :show]
   resources :snowfalls, only: [:index]
   resources :users
+  resources :tweets,    only: [:new, :create]
 end
