@@ -1,3 +1,10 @@
-= form_for :tweet, url: tweets_path, method: :post do |f|
-  = f.text_field :message, :value => "It's time to shred #{@resort}! @PowPursuit"
-  = f.submit "Send Tweet"
+%body.welcome
+  .container
+    .row.col-lg-6.col-lg-offset-3
+      %h2 Share Your Pursuit On Twitter.
+      = form_for :tweet, url: tweets_path, method: :post, :html => { :class => "form-horizontal"} do |f|
+        .form-group
+          .col-sm-10
+            = f.text_field :message, class: "form-control", :value => "It's time to shred #{@resort}! @PowPursuit"
+            %br/
+            = f.submit "Send Tweet", class: "btn btn-large btn-info"
