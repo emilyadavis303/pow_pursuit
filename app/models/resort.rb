@@ -1,6 +1,11 @@
 class Resort < ActiveRecord::Base
   has_many :favorites
-  has_many :users, :through => :favoritese
+  has_many :users, :through => :favorite
+
+  validates :name,           presence: true
+  validates :snotel_station, presence: true
+  validates :lat,            presence: true
+  validates :lng,            presence: true
 
   def determine_daily_snowfall
     snowfall_daily = Snotel.hourly(snotel_station.to_sym).last[:change_in_snow_depth_in]
