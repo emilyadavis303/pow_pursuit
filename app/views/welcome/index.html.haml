@@ -9,8 +9,9 @@
             .row
               - @top_three.each do |resort|
                 .col-lg-4.resort
+                  %img.img-rounded.resort{:src => resort.logo, :style => "width: 100px; height: 100px;"}
                   %h2= resort.name
-                  %h4= "Snowfall: #{resort.daily_snowfall}"
+                  %h3= "Past 24 hours: #{resort.daily_snowfall} in."
                   %p
                     = link_to "Details & Map", resort_path(resort), class: 'btn btn-default'
                   %br/

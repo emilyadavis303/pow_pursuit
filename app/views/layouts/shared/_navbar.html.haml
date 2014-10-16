@@ -7,8 +7,14 @@
           = link_to "Home", root_path
         %li
           = link_to "Snowfalls", snowfalls_path
-        %li
-          = link_to "Resorts", resorts_path
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Resorts
+            %span.caret
+          %ul.dropdown-menu{:role => "menu"}
+            %li= link_to 'All Resorts', resorts_path
+            - Resort.all.each do |r|
+              %li= link_to r.name, resort_path(r)
         %li.dropdown
           %a.dropwdown-toggle{"data-toggle" => "dropdown", :href => "#"}
             Your Pursuit
@@ -18,6 +24,7 @@
               %li
                 = link_to "Your Profile", user_path(current_user)
                 = link_to "Help Us Help Your Pursuit", edit_user_path(current_user)
+                = link_to "Sign out", signout_path
             - else
               %li
                 = link_to "Sign In With Twitter", "/auth/twitter"
