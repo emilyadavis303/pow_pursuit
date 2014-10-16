@@ -14,7 +14,6 @@ class User < ActiveRecord::Base
 
   def tweet(tweet)
     client = Twitter::REST::Client.new do |config|
-      binding.pry
       config.consumer_key        = ENV["consumer_key"]
       config.consumer_secret     = ENV["consumer_secret"]
       config.access_token        = oauth_token

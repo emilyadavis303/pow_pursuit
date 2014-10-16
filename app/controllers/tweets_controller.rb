@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   def new
+    @resort = params[:resort]
   end
 
   def create
@@ -8,6 +9,6 @@ class TweetsController < ApplicationController
   end
 
   def twitter_params
-    params.require(:tweet).permit(:message)
+    params.require(:tweet).permit(:message, :resort)
   end
 end
