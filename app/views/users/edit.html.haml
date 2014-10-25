@@ -20,6 +20,10 @@
           .col-sm-10
             = f.text_field :city, class: "form-control", placeholder: "City"
         .form-group
+          = f.label :profile_photo, class: "col-sm-2 control-label"
+          .col-sm-10
+            = f.file_field :avatar, class: "form-control"
+        .form-group
           = f.label :favorite, :class => "col-sm-2 control-label"
           .col-sm-10
             = select(:favorites, :resort_ids, options_from_collection_for_select(Resort.all, "id", "name"), {}, { multiple: true, size: 5 })

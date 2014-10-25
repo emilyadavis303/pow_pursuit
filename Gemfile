@@ -20,6 +20,7 @@ gem 'figaro'
 gem 'whenever',       require: false
 gem 'twitter'
 gem 'jquery-turbolinks'
+gem 'paperclip',      '~> 4.2'
 
 group :development, :test do
   gem 'spring'

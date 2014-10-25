@@ -36,10 +36,7 @@ class UsersController < ApplicationController
     params.require(:user).permit( :name,
                                   :email,
                                   :city,
-                                  :fave_one,
-                                  :fave_two,
-                                  :fave_three,
-                                  favorites: :resort_ids)
+                                  :avatar)
   end
 
   def set_user
