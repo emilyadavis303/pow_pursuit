@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user      = current_user
     @favorites = @user.resorts
+    @photos    = @user.user_photos
   end
 
   def edit

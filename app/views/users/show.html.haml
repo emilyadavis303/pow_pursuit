@@ -3,13 +3,20 @@
     .site-wrapper-inner
       .cover-container
         .inner.cover
-          %h1.cover-heading Your Pursuit
+          %h1.cover-heading Your Pow Adventures
           .container-fluid
             .row
-              - @favorites.each do |favorite|
-                .col-lg-4.resorts
-                  %img.img-rounded.resort{:src => favorite.logo, :style => "width: 150px; height: 150px;"}
-                  %h1= favorite.name
-                  %h3= "Snowfall: #{favorite.daily_snowfall} in."
-                  = link_to "Details & Map", resort_path(favorite), class: 'btn btn-default'
-                  = link_to "Tweet Your Pursuit", new_tweet_path(:resort => "#{favorite.name}"), class: 'btn btn-info'
+              .col-sm-2.blog-sidebar
+                .sidebar-module
+                  %img.img-rounded{:src => @user.avatar.url(:thumb)}
+                  %h3 Your Resorts
+                  - @favorites.each do |favorite|
+                    %a{:href => resort_path(favorite)}
+                      %img.img-rounded.resort{:src => favorite.logo, :style => "width: 100px; height: 100px;"}
+                    %h4= "#{favorite.daily_snowfall} in."
+                    = link_to "Tweet Your Pursuit", new_tweet_path(:resort => "#{favorite.name}"), class: 'btn-xs btn-info'
+              .col-sm-10.user-photo-gallery
+                = link_to "Upload Your Adventure", new_user_photo_path, class: "btn btn-large btn-default"
+                %br/
+                - @photos.each do |photo|
+                  %img.img-rounded.resort{:src => photo.photo.url(:medium)}

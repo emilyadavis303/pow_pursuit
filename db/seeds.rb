@@ -4,7 +4,7 @@ resorts = Resort.create([
   {name: "Beaver Creek",      snotel_station: "beaver_creek",     lat: 39.631847, lng: -106.523542, logo: '/images/beaver_creek.jpeg'},
   {name: "Breckenridge",      snotel_station: "michigan_creek",   lat: 39.481768, lng: -106.036945, logo: '/images/breck.jpeg'},
   {name: "Buttermilk",        snotel_station: "mc_clure_pass",    lat: 39.206246, lng: -106.860377, logo: '/images/aspen.jpeg'},
-  {name: "Copper Mountain",   snotel_station: "fremont_pass",     lat: 39.500251, lng: -106.144332, logo: '/images/copper.jpeg«»'},
+  {name: "Copper Mountain",   snotel_station: "fremont_pass",     lat: 39.500251, lng: -106.144332, logo: '/images/copper.jpeg'},
   {name: "Crested Butte",     snotel_station: "schofield_pass",   lat: 38.885449, lng: -106.942348, logo: '/images/crested_butte.jpeg'},
   {name: "Eldora",            snotel_station: "lake_eldora",      lat: 39.936739, lng: -105.576462, logo: '/images/eldora.jpeg'},
   {name: "Keystone",          snotel_station: "grizzly_peak",     lat: 39.603583, lng: -105.949677, logo: '/images/keystone.jpeg'},
