@@ -2,13 +2,15 @@ class ResortsController < ApplicationController
   before_action :set_resort, only: [:show]
 
   def index
-    @resorts  = Resort.all
+    if params[:user_id]
+      @resorts = current_user.resorts
+      render action: 'user_favorites'
+    else
+      @resorts = Resort.all
+    end
   end
 
   def show
-    @snowfall_24 = @resort.determine_daily_snowfall
-    @snowfall_3  = @resort.determine_three_day_snowfall
-    @snowfall_7  = @resort.determine_seven_day_snowfall
     @resort_lat  = @resort.lat
     @resort_lng  = @resort.lng
   end

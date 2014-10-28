@@ -9,12 +9,11 @@
               .col-sm-2.blog-sidebar
                 .sidebar-module
                   %img.img-rounded{:src => @user.avatar.url(:thumb)}
-                  %h3 Your Resorts
+                  %h3 Your Resorts:
                   - @favorites.each do |favorite|
                     %a{:href => resort_path(favorite)}
                       %img.img-rounded.resort{:src => favorite.logo, :style => "width: 100px; height: 100px;"}
                     %h4= "#{favorite.daily_snowfall} in."
-                    = link_to "Tweet Your Pursuit", new_tweet_path(:resort => "#{favorite.name}"), class: 'btn-xs btn-info'
               .col-sm-10.user-photo-gallery
                 = link_to "Upload Your Adventure", new_user_photo_path, class: "btn btn-large btn-default"
                 %br/

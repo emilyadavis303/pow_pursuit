@@ -17,3 +17,4 @@
                 = link_to "Upload Your Adventure", new_user_photo_path, class: "btn btn-large btn-default"
                 - current_user.user_photos.each do |photo|
                   %img.img-rounded.resort{:src => photo.url(:medium)}
+                  = link_to "Tweet Your Pursuit", new_tweet_path(:resort => "#{favorite.name}"), class: 'btn-xs btn-info'

@@ -1,0 +1,15 @@
+%body.all-resorts
+  .resorts-site-wrapper
+    .site-wrapper-inner
+      .cover-container
+        .inner.cover
+          %h1.cover-heading Your Snowfalls
+          .row
+            .container-fluid
+              - @resorts.each do |resort|
+                .col-sm-4.resorts
+                  %img.img-rounded.resort{:src => resort.logo, :style => "width: 150px; height: 150px;"}
+                  %h1= resort.name
+                  %h3= "Snowfall: #{resort.daily_snowfall} in."
+                  = link_to "Details & Map", resort_path(resort), class: 'btn btn-default'
+                  = link_to "Tweet Your Pursuit", new_tweet_path(:resort => "#{resort.name}"), class: 'btn btn-info'

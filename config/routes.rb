@@ -6,9 +6,12 @@ Rails.application.routes.draw do
 
   resources :resorts,     only: [:index, :show]
   resources :snowfalls,   only: [:index]
-  resources :users
+
+  resources :users do
+    resources :resorts
+  end
   resources :user_photos
   resources :tweets,      only: [:new, :create]
 
-  match  '/user_profile', to: 'users#profile', via: 'get'
+  # match  '/user_profile', to: 'users#profile', via: 'get'
 end

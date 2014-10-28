@@ -22,8 +22,8 @@
           %ul.dropdown-menu{:role => "menu"}
             - if current_user
               %li
-                = link_to "Your Profile", user_profile_path(current_user)
-                = link_to "Your Snowfalls", user_path(current_user)
+                = link_to "Your Pursuit", user_path(current_user)
+                = link_to "Your Snowfalls", user_resorts_path(current_user)
                 = link_to "Help Us Help Your Pursuit", edit_user_path(current_user)
                 = link_to "Sign out", signout_path
             - else
