@@ -8,9 +8,7 @@
             .row
               - @resorts.each do |resort|
                 .col-lg-4.resorts
-                  %img.img-rounded.resort{:src => resort.logo, :style => "width: 150px; height: 150px;"}
+                  %a{:href => resort_path(resort)}
+                    %img.img-rounded.resort{:src => resort.logo, :style => "width: 150px; height: 150px;"}
                   %h1= resort.name
                   %h3= "Snowfall: #{resort.daily_snowfall} in."
-                  %p TRAVEL TIME
-                  %p
-                    = link_to "Details & Map", resort_path(resort), class: 'btn btn-default'

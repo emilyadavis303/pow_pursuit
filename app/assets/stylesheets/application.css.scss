@@ -115,7 +115,16 @@
 }
 .resorts{
   width: 25%;
-  height: 350px;
+  height: 300px;
+  margin: 50px;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+
+.user-resorts{
+  width: 25%;
+  height: 325px;
   margin: 50px;
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
