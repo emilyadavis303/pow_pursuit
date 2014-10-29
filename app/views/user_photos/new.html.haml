@@ -13,4 +13,4 @@
             = f.file_field :photo, class: "form-control"
             = f.hidden_field :user_id, value: current_user.id
         .form-group
-          = f.submit "Update My Account", class: "btn btn-large btn-default", href: "user_update_path"
+          = f.submit "Upload My Photo", class: "btn btn-large btn-default", href: "new_user_photo_path"

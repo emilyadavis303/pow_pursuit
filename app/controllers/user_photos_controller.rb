@@ -7,7 +7,7 @@ class UserPhotosController < ApplicationController
     @photo = current_user.user_photos.create(photo_params)
 
     if @photo.save
-      redirect_to user_profile_path(current_user)
+      redirect_to user_path(current_user)
       flash[:notice] = "Your Photo Was Uploaded!"
     else
       redirect_to root_path

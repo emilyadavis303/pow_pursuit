@@ -21,11 +21,11 @@ gem 'whenever',       require: false
 gem 'twitter'
 gem 'jquery-turbolinks'
 gem 'paperclip',      '~> 4.2'
+gem 'pg'
 
 group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
-  gem 'sqlite3'
   gem 'capybara'
   gem 'launchy'
   gem 'pry'
@@ -38,7 +38,6 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
   gem 'skylight'
 end
