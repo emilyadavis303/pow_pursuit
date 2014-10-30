@@ -9,7 +9,7 @@
             .row
               - @top_three.each do |resort|
                 .col-lg-4.resort
-                  %img.img-rounded.resort{:src => resort.logo, :style => "width: 100px; height: 100px;"}
+                  = image_tag("#{resort.logo}", :class => "img-rounded resort_logos_sm")
                   %h2= resort.name
                   %h3= "Past 24 hours: #{resort.daily_snowfall} in."
                   %p

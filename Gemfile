@@ -22,6 +22,8 @@ gem 'twitter'
 gem 'jquery-turbolinks'
 gem 'paperclip',      '~> 4.2'
 gem 'pg'
+gem 'sprockets'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'spring'
@@ -35,8 +37,4 @@ group :test do
   gem 'database_cleaner'
   gem 'nyan-cat-formatter'
   gem "codeclimate-test-reporter", require: nil
-end
-
-group :production do
-  gem 'rails_12factor'
 end

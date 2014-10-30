@@ -367,6 +367,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   snotel
   spring
+  sprockets
   turbolinks
   twitter
   uglifier (>= 1.3.0)
