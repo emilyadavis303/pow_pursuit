@@ -23,7 +23,7 @@ gem 'jquery-turbolinks'
 gem 'paperclip',      '~> 4.2'
 gem 'pg'
 gem 'sprockets'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'spring'
