@@ -12,7 +12,7 @@
                   %h3 Your Resorts:
                   - @favorites.each do |favorite|
                     %a{:href => resort_path(favorite)}
-                      = image_tag("#{favorite.logo}", :class => "img-rounded resort_logos_med")
+                      = image_tag("#{favorite.logo}", :class => "img-rounded resort_logos_sm")
                     %h4= "#{favorite.daily_snowfall} in."
               .col-sm-10.user-photo-gallery
                 = link_to "Upload Your Adventure", new_user_photo_path, class: "btn btn-large btn-default"

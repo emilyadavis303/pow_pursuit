@@ -3,9 +3,6 @@ MQA.EventUtil.observe(window, 'load', function() {
   var resortLat = $('#map-coordinates').data('resort-lat');
   var resortLng = $('#map-coordinates').data('resort-lng');
 
-  // var resortLat=#{@resort_lat};
-  // var resortLng=#{@resort_lng};
-
   var options = {
     elt: document.getElementById('map'),              // ID of map element on page
     zoom: 8,                                          // initial zoom level of the map
