@@ -10,7 +10,7 @@ MQA.EventUtil.observe(window, 'load', function() {
   };
 
   // construct an instance of MQA.TileMap with the options object
-  window.map = new MQA.TileMap(options);
+  window.map = new MQA.TileMapc(options);
   // download the modules
     MQA.withModule('traffictoggle', 'mousewheel', function() {
 
@@ -27,7 +27,7 @@ MQA.EventUtil.observe(window, 'load', function() {
       map.addControl(
         new MQA.LargeZoom(),
         new MQA.MapCornerPlacement(MQA.MapCorner.TOP_LEFT, new MQA.Size(5,5))
-        );
+      );
 
   });
 });
