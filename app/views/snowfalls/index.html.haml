@@ -7,9 +7,4 @@
           %h4.cover-heading *Click Logo to See Snowfall Details & Map*
           .container-fluid
             .row
-              - @resorts.each do |resort|
-                .col-lg-4.resorts
-                  %a{:href => resort_path(resort)}
-                    = image_tag("#{resort.logo}", :class => "img-rounded resort_logos_med")
-                  %h1= resort.name
-                  %h3= "Snowfall: #{resort.daily_snowfall} in."
+              = render partial: 'layouts/shared/all_resorts'

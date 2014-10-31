@@ -14,73 +14,9 @@
                 %h2= "Past 3 days: #{@resort.three_day_snowfall} in."
                 %h2= "Past 7 days: #{@resort.seven_day_snowfall} in."
                 %br
-                %h4 Travel Time Based on Current Traffic:
+                %h4 Travel Time In Current Traffic:
                 %h3.span#realTime
               .col-lg-8
                 #map{:style => "height: 525px; width: auto;"}
-                  %script{:src => "http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=Fmjtd%7Cluurnu6ynl%2Cbx%3Do5-9wrnu0"}
-                  :javascript
-                    // download the module
-                    MQA.EventUtil.observe(window, 'load', function() {
-
-                    var resortLat=#{@resort_lat};
-                    var resortLng=#{@resort_lng};
-
-                    var options = {
-                      elt: document.getElementById('map'),              // ID of map element on page
-                      zoom: 8,                                          // initial zoom level of the map
-                      latLng: { lat: 39.644801, lng: -106.595289 },     // center of map in latitude/longitude
-                      mtype: 'map'                                      // map type (map, sat, hyb); defaults to map
-                    };
-
-                    // construct an instance of MQA.TileMap with the options object
-                    window.map = new MQA.TileMap(options);
-                    // download the modules
-                      MQA.withModule('traffictoggle', 'mousewheel', function() {
-                        map.addControl(new MQA.TrafficToggle());
-                        map.enableMouseWheelZoom();
-                      })
-                      MQA.withModule('largezoom', function() {
-                        map.addControl(
-                          new MQA.LargeZoom(),
-                          new MQA.MapCornerPlacement(MQA.MapCorner.TOP_LEFT, new MQA.Size(5,5))
-                        );
-                      });
-                      MQA.withModule('new-route', function() {
-                        map.addRoute({
-                          request: {
-                            locations: [
-                              { latLng: {lat: 39.700493, lng: -105.206661 }},
-                              { latLng: {lat: resortLat, lng: resortLng }}
-                            ]
-                            }
-                          });
-                      });
-                      MQA.withModule('directions', function() {
-                        // executes the route call with 4 parameters
-                        MQA.Directions.route(
-                            // an array of location objects as the first parameter
-                            [{ latLng: {lat: 39.700493, lng: -105.206661 }},
-                            { latLng: {lat: resortLat, lng: resortLng }}],
-
-                            // an object for route options are the second parameter
-                            null,
-
-                            // Pass in an instance of MQA.TileMap for the third parameter. If not null, the call will create
-                            // a route ribbon on the map.
-                            null,
-
-                            // Callback function to be executed after the route call. The callback will pass the raw response
-                            // from the route request as a parameter.
-                            summary
-                          );
-                        });
-
-
-                      // example callback function to display the distance and time
-                    function summary(data) {
-                        if (data && data.route) {
-                            document.getElementById('realTime').innerHTML = data.route.formattedTime;
-                        }
-                      }
-                    });
+                #map-coordinates{"data-resort-lat" => @resort_lat, "data-resort-lng" => @resort_lng}
+                  = javascript_include_tag "resort_map.js"
