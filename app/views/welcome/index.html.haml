@@ -1,19 +1,18 @@
-%body.all-resorts
-  .site-wrapper
-    .site-wrapper-inner
-      .cover-container
-        .inner.cover
-          %h1.cover-heading For Those Who Shred.
-          %p.lead Today's top three snowfalls:
-          .container.marketing
-            .row
-              - @top_three.each do |resort|
-                .col-lg-4.resort
-                  = image_tag("#{resort.logo}", :class => "img-rounded resort_logos_sm")
-                  %h2= resort.name
+%script{:src => "http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=#{ENV['MAPQUEST_KEY']}"}
+.site-wrapper
+  .site-wrapper-inner
+    .cover-container
+      .inner.cover
+        %h1.cover-heading For Those Who Shred.
+        %p.lead Today's top three snowfalls:
+        .container.marketing
+          .row
+            .col-sm-2.blog-sidebar
+              .sidebar-module
+                - @top_three.each do |resort|
+                  %a{:href => resort_path(resort)}
+                    = image_tag("#{resort.logo}", :class => "img-rounded resort_logos_sm")
                   %h3= "Past 24 hours: #{resort.daily_snowfall} in."
-                  %p
-                    = link_to "Details & Map", resort_path(resort), class: 'btn btn-default'
-                  %br/
+            .col-sm-10
               #map
                 = javascript_include_tag "root_map.js"

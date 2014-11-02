@@ -6,9 +6,6 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
-    %script{:src => "http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=Fmjtd%7Cluurnu6ynl%2Cbx%3Do5-9wrnu0"}
-    %script{:src => "../../dist/js/bootstrap.min.js"}
-    %script{:src => "../../assets/js/docs.min.js"}
-  %body
+  %body.site-background
     = render partial: 'layouts/shared/navbar'
     = yield

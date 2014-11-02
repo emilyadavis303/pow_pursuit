@@ -52,12 +52,10 @@ MQA.EventUtil.observe(window, 'load', function() {
         summary
       );
     });
-
-
   // example callback function to display the distance and time
-  function summary(data) {
-    if (data && data.route) {
-        document.getElementById('realTime').innerHTML = data.route.formattedTime;
+    function summary(data) {
+      if (data && data.route) {
+          document.getElementById('realTime').innerHTML = data.route.formattedTime;
+      }
     }
-  }
 });
