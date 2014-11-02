@@ -1,16 +1,15 @@
-%body.welcome
-  .container
-    .row.col-lg-6.col-lg-offset-3
-      %h2 Upload Your Adventure.
-      = form_for(@photo, url: user_photos_path, method: :create, :html => { :multipart => true }) do |f|
-        - if @photo.errors.any?
-          %ul#errors
-            - @photo.errors.full_messages.each do |error|
-              %li= error
-        .form-group
-          = f.label :photo, class: "col-sm-2 control-label"
-          .col-sm-10
-            = f.file_field :photo, class: "form-control"
-            = f.hidden_field :user_id, value: current_user.id
-        .form-group
-          = f.submit "Upload My Photo", class: "btn btn-large btn-default", href: "new_user_photo_path"
+.container
+  .row.col-lg-6.col-lg-offset-3
+    %h2 Upload Your Adventure.
+    = form_for(@photo, url: user_photos_path, method: :create, :html => { :multipart => true }) do |f|
+      - if @photo.errors.any?
+        %ul#errors
+          - @photo.errors.full_messages.each do |error|
+            %li= error
+      .form-group
+        = f.label :photo, class: "col-sm-2 control-label"
+        .col-sm-10
+          = f.file_field :photo, class: "form-control"
+          = f.hidden_field :user_id, value: current_user.id
+      .form-group
+        = f.submit "Upload My Photo", class: "btn btn-large btn-default", href: "new_user_photo_path"

@@ -1,22 +1,21 @@
 %script{:src => "https://maps.googleapis.com/maps/api/js"}
-
-%body.resort-background
-  .resorts-site-wrapper
-    .site-wrapper-inner
-      .cover-container
-        .inner.cover
-          %h1.cover-heading= @resort.name
-          .container-fluid
-            .row
-              .col-lg-2.resort-details
-                %h1.cover-heading Snowfall:
-                %h2= "Past 24 hours: #{@resort.daily_snowfall} in."
-                %h2= "Past 3 days: #{@resort.three_day_snowfall} in."
-                %h2= "Past 7 days: #{@resort.seven_day_snowfall} in."
-                %br
-                %h4 Travel Time In Current Traffic:
-                %h3.span#realTime
-              .col-lg-8
-                #map{:style => "height: 525px; width: auto;"}
-                #map-coordinates{"data-resort-lat" => @resort_lat, "data-resort-lng" => @resort_lng}
-                  = javascript_include_tag "resort_map.js"
+%script{:src => "http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=#{ENV['MAPQUEST_KEY']}"}
+.resorts-site-wrapper
+  .site-wrapper-inner
+    .cover-container
+      .inner.cover
+        %h1.cover-heading= @resort.name
+        .container-fluid
+          .row
+            .col-lg-2.resort-details
+              %h1.cover-heading Snowfall:
+              %h2= "Past 24 hours: #{@resort.daily_snowfall} in."
+              %h2= "Past 3 days: #{@resort.three_day_snowfall} in."
+              %h2= "Past 7 days: #{@resort.seven_day_snowfall} in."
+              %br
+              %h4 Travel Time In Current Traffic:
+              %h3.span#realTime
+            .col-lg-8
+              #map{:style => "height: 525px; width: auto;"}
+              #map-coordinates{"data-resort-lat" => @resort_lat, "data-resort-lng" => @resort_lng}
+                = javascript_include_tag "resort_map.js"

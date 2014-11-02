@@ -1,57 +1,31 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "navbar";
+@import "welcome";
+@import "user";
+@import "resorts";
 
-/*
- * NavBar
- */
-.masthead-brand {
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+.cover-heading {
   margin-top: 10px;
-  margin-bottom: 20px;
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
-.masthead-nav > li {
-  display: inline-block;
+.inner {
+  padding: 15px;
 }
-.masthead-nav > li + li {
-  margin-left: 20px;
+.lead {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
-  border-bottom: 2px solid transparent;
+.marketing{
+  height: 600px;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
-}
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-
-@media (min-width: 768px) {
-  .masthead-brand {
-    float: left;
-  }
-  .masthead-nav {
-    float: right;
-  }
-}
-
-/*
- * Welcome Index
- */
-.welcome {
-  background: url(chair-lift.jpg) no-repeat center center fixed;
+.site-background {
+  background: url(IMG_0466.jpg) no-repeat center center fixed;
   background-size: 100%;
 }
 .site-wrapper {
@@ -68,100 +42,4 @@
 .site-wrapper-inner {
   display: table-cell;
   vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-.inner {
-  padding: 15px;
-}
-.lead {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.resort {
-  margin-top: 10px;
-}
-.marketing{
-  height: 600px;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-.resort_logos_med {
-  margin-top: 10px;
-  width: 150px;
-  height: 150px;
-}
-.resort_logos_sm {
-  margin-top: 15px;
-  width: 100px;
-  height: 100px;
-}
-#map {
-  width: auto;
-  height: 400px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/*
- * Resorts Index
- */
-.all-resorts {
-  background: url(IMG_0466.jpg) no-repeat center center fixed;
-  background-size: 100%;
-}
-.resorts-site-wrapper {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
-  display: table;
-  width: 100%;
-  height: 600px;
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-.resorts{
-  width: 25%;
-  height: 300px;
-  margin: 50px;
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-
-.user-resorts{
-  width: 25%;
-  height: 325px;
-  margin: 50px;
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-/*
- * Resort Show
- */
-.cover-heading{
-  margin-top: 10px;
-}
-.resort-background{
-   background: url(chair-lift.jpg) no-repeat center center fixed;
-   background-size: 100%;
-}
-.resort-details{
-  width: 25%;
-  height: 350px;
-  margin: 100px 45px 100px 45px;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-
-/*
- * User Photos
- */
-.user-photo-gallery{
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
