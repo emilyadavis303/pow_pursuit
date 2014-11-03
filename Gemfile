@@ -16,14 +16,17 @@ gem 'haml-rails'
 gem 'snotel'
 gem 'omniauth'
 gem 'omniauth-twitter'
-gem 'figaro'
 gem 'whenever',       require: false
 gem 'twitter'
 gem 'jquery-turbolinks'
 gem 'paperclip',      '~> 4.2'
 gem 'pg'
 gem 'sprockets'
-gem 'rails_12factor', group: :production
+gem 'unicorn'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'spring'
