@@ -7,7 +7,7 @@
           .container-fluid
             - @resorts.each do |resort|
               .col-sm-4.user-resorts
-                %img.img-rounded.resort{:src => resort.logo, :style => "width: 150px; height: 150px;"}
+                = image_tag("#{resort.logo}", :class => "img-rounded resort_logos_med")
                 %h1= resort.name
                 %h3= "Snowfall: #{resort.daily_snowfall} in."
                 = link_to "Details & Map", resort_path(resort), class: 'btn btn-default'
